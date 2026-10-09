@@ -1,0 +1,217 @@
+
+.machine-page {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 24px;
+  text-align: center;
+}
+
+.machine-page h1 {
+  color: #c2410c;
+  font-size: 2.4rem;
+}
+
+.intro {
+  color: #475569;
+  line-height: 1.7;
+}
+
+.machine {
+  max-width: 420px;
+  margin: 35px auto 20px;
+  padding: 18px;
+  background: #e2e8f0;
+  border: 3px solid #94a3b8;
+  border-radius: 24px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.machine-top,
+.machine-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.machine-light {
+  width: 12px;
+  height: 12px;
+  background: #64748b;
+  border-radius: 50%;
+}
+
+.machine-light.on {
+  background: #22c55e;
+  box-shadow: 0 0 12px #22c55e;
+}
+
+.machine-face {
+  position: relative;
+  min-height: 240px;
+  padding: 25px 15px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 15px;
+}
+
+#machine-message {
+  min-height: 28px;
+  color: #334155;
+  font-weight: bold;
+}
+
+.switch {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.switch-track {
+  position: relative;
+  display: block;
+  width: 84px;
+  height: 44px;
+  background: #94a3b8;
+  border: 3px solid #64748b;
+  border-radius: 24px;
+  transition: background 0.2s;
+}
+
+.switch-track::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px #64748b;
+  content: "";
+  transition: transform 0.2s;
+}
+
+.switch input:checked + .switch-track {
+  background: #22c55e;
+}
+
+.switch input:checked + .switch-track::after {
+  transform: translateX(40px);
+}
+
+.switch input:focus-visible + .switch-track {
+  outline: 3px solid #f97316;
+  outline-offset: 4px;
+}
+
+.switch-label {
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.machine-hand {
+  position: absolute;
+  top: 110px;
+  right: -90px;
+  font-size: 4rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.machine-hand.active {
+  animation: hand-action 1.5s ease-in-out forwards;
+}
+
+@keyframes hand-action {
+  0% {
+    right: -90px;
+    opacity: 0;
+    transform: rotate(0);
+  }
+
+  25% {
+    right: 35px;
+    opacity: 1;
+    transform: rotate(-15deg);
+  }
+
+  55% {
+    right: 35px;
+    opacity: 1;
+    transform: rotate(15deg);
+  }
+
+  100% {
+    right: -90px;
+    opacity: 0;
+    transform: rotate(0);
+  }
+}
+
+#machine-status {
+  min-height: 24px;
+  color: #475569;
+  font-weight: 600;
+}
+
+#reset-button {
+  margin-top: 12px;
+  padding: 12px 22px;
+  color: white;
+  background: #c2410c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#reset-button:hover {
+  background: #9a3412;
+}
+
+#reset-button:focus-visible {
+  outline: 3px solid #f97316;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .machine-page {
+    margin: 20px auto;
+    padding: 12px;
+  }
+
+  .machine-page h1 {
+    font-size: 1.9rem;
+  }
+
+  .machine {
+    padding: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .machine-hand.active {
+    animation-duration: 0.1ms;
+  }
+
+  .switch-track,
+  .switch-track::after {
+    transition: none;
+  }
+}

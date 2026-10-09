@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Useless Machine</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="machine.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="machine-page">
+    <h1>The Useless Machine</h1>
+    <p class="intro">A machine that does one thing: undo what you just did.</p>
+
+    <section class="machine" aria-label="Useless machine">
+      <div class="machine-top">
+        <span class="machine-light" id="machine-light"></span>
+        <span>MODEL UM-01</span>
+      </div>
+
+      <div class="machine-face">
+        <p id="machine-message">Go ahead. Turn me on.</p>
+
+        <label class="switch" for="machine-switch">
+          <input type="checkbox" id="machine-switch">
+          <span class="switch-track"></span>
+          <span class="switch-label">POWER</span>
+        </label>
+
+        <div class="machine-hand" id="machine-hand" aria-hidden="true">
+          👆
+        </div>
+      </div>
+
+      <div class="machine-bottom">PLEASE DO NOT DISTURB</div>
+    </section>
+
+    <p id="machine-status" role="status" aria-live="polite">
+      The machine is sleeping.
+    </p>
+
+    <button type="button" id="reset-button">Reset Machine</button>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="nav.js"></script>
+  <script src="machine.js"></script>
+</body>
+</html>
