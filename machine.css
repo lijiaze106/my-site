@@ -190,6 +190,28 @@
   outline-offset: 3px;
 }
 
+:root[data-theme="dark"] .machine {
+  background: #29313d;
+  border-color: #566171;
+}
+
+:root[data-theme="dark"] .machine-top,
+:root[data-theme="dark"] .machine-bottom,
+:root[data-theme="dark"] .intro,
+:root[data-theme="dark"] .switch-label,
+:root[data-theme="dark"] #machine-status {
+  color: #c4cbd4;
+}
+
+:root[data-theme="dark"] .machine-face {
+  background: #202630;
+  border-color: #465160;
+}
+
+:root[data-theme="dark"] #machine-message {
+  color: #e8e9ed;
+}
+
 @media (max-width: 600px) {
   .machine-page {
     margin: 20px auto;
