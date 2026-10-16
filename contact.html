@@ -1,63 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>This my first HTML page.</title>
-  <link rel="icon" href="favicon-32x32.png" type="image?x-icon">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Get in touch with Jiaze Li and explore what he's learning and building.">
+  <title>Contact Jiaze — Say hello</title>
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-        background-color: lightpink;
-    }
-    
-
-    .main {
-        text-align: center;
-        margin: auto ;
-        width: 50%;
-        border: 1px solid black;
-        padding: 20px;
-        background-color: rgb(219, 18, 18);
-        border-radius: 20px;
-        box-shadow: 0px 0px 10px black;
-    }
-    h1 {
-
-        color: blue;
-        background-color: lightgreen;
-    }
-    h2{
-        color: green;
-        
-    }
-  </style>
 </head>
-<body>
-    <!-- index.html, quotes.html, project.html -->
-<header id="site-header">
-  <!-- the nav used to be here. Now it is empty. -->
-</header>
+<body class="contact-page">
+  <header id="site-header"></header>
 
+  <main class="contact-main">
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="contact-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Contact · Always learning</p>
+        <h1 id="contact-title">Let’s talk.<br><span>Say hello.</span></h1>
+        <p class="contact-intro">
+          Have a question, an idea, or a project you think I’d find interesting?
+          I’m glad you’re here.
+        </p>
+        <p class="contact-note">
+          I’m still setting up the best way to get in touch. For now, take a look
+          around and see what I’m learning.
+        </p>
+      </div>
 
-  <main>
-    <!-- 注释-->
-     <div class="main">
-    <h1>contact </h1>
-    </div>
+      <aside class="contact-card" aria-label="Explore more of the website">
+        <span class="contact-card-number" aria-hidden="true">01 / 02</span>
+        <span class="contact-icon" aria-hidden="true">↗</span>
+        <p class="contact-card-label">Keep exploring</p>
+        <h2>There’s more<br>to discover.</h2>
+        <p class="contact-card-copy">A few projects, some favorite ideas, and a little about the person behind this site.</p>
+        <div class="contact-card-links">
+          <a href="project.html">See my projects <span aria-hidden="true">→</span></a>
+          <a href="about.html">Get to know me <span aria-hidden="true">→</span></a>
+        </div>
+      </aside>
+    </section>
 
-
-
-    <!-- 无序列表 无序号 前面是·-->
-    <!--  <ul>
-      <li>English</li>
-      <li>Chinese</li>
-      <li>Math</li>
-    </ul>-->
-
+    <section class="contact-bottom" aria-label="A note about this website">
+      <p><span class="contact-bottom-dot" aria-hidden="true"></span> Made while learning, improved one step at a time.</p>
+      <a href="index.html">Back to the homepage <span aria-hidden="true">↗</span></a>
+    </section>
   </main>
-</div>
-<footer id="site-footer">
-  </footer>
-<script src="nav.js"></script>
+
+  <footer id="site-footer"></footer>
+  <script src="nav.js"></script>
 </body>
 </html>
