@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Useless Machine</title>
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Meet the Useless Machine: a beautifully over-engineered answer to a question nobody asked.">
+  <title>The Useless Machine — Jiaze Li</title>
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="machine.css">
 </head>
@@ -12,37 +14,67 @@
   <header id="site-header"></header>
 
   <main class="machine-page">
-    <h1>The Useless Machine</h1>
-    <p class="intro">A machine that does one thing: undo what you just did.</p>
-
-    <section class="machine" aria-label="Useless machine">
-      <div class="machine-top">
-        <span class="machine-light" id="machine-light"></span>
-        <span>MODEL UM-01</span>
+    <section class="machine-intro" aria-labelledby="machine-title">
+      <div>
+        <p class="machine-eyebrow"><span></span> An exercise in over-engineering</p>
+        <h1 id="machine-title">The Useless<br><span>Machine.</span></h1>
+        <p class="machine-intro-copy">
+          One switch. One very strong opinion. Turn it on and watch this little
+          machine do absolutely everything in its power to turn it off again.
+        </p>
+        <p class="machine-edition"><span>DESIGNED TO DISAGREE</span><span>EST. 2026</span></p>
       </div>
 
-      <div class="machine-face">
-        <p id="machine-message">Go ahead. Turn me on.</p>
-
-        <label class="switch" for="machine-switch">
-          <input type="checkbox" id="machine-switch">
-          <span class="switch-track"></span>
-          <span class="switch-label">POWER</span>
-        </label>
-
-        <div class="machine-hand" id="machine-hand" aria-hidden="true">
-          👆
+      <section class="machine" tabindex="0" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight" aria-label="Interactive Useless Machine, model UM-01. Drag to rotate it in 3D or use the arrow keys.">
+        <div class="machine-top">
+          <span class="machine-brand"><span class="brand-mark">U.</span> OBJECTS OF NO IMPORTANCE</span>
+          <span class="machine-model">UM—01 <span>·</span> No. 001</span>
         </div>
-      </div>
 
-      <div class="machine-bottom">PLEASE DO NOT DISTURB</div>
+        <div class="machine-face">
+          <div class="arm-hatch" aria-hidden="true"></div>
+          <div class="machine-display">
+            <span class="display-caption"><span class="machine-light" id="machine-light"></span> SYSTEM STATUS</span>
+            <p id="machine-message">Awaiting a questionable decision.</p>
+          </div>
+
+          <div class="control-caption"><span>THE ONLY CONTROL</span><span>ON / OFF</span></div>
+          <label class="switch" for="machine-switch">
+            <input type="checkbox" id="machine-switch">
+            <span class="switch-track" aria-hidden="true"></span>
+            <span class="switch-label">POWER</span>
+          </label>
+
+          <div class="machine-hand" id="machine-hand" aria-hidden="true">
+            <span class="arm-base"></span>
+            <span class="arm-upper"></span>
+            <span class="arm-elbow"></span>
+            <span class="arm-forearm"></span>
+            <span class="arm-actuator"></span>
+            <span class="arm-wrist"></span>
+            <span class="arm-gripper">
+              <span class="arm-finger"></span>
+              <span class="arm-finger-secondary"></span>
+            </span>
+          </div>
+          <span class="face-screw screw-one" aria-hidden="true"></span>
+          <span class="face-screw screw-two" aria-hidden="true"></span>
+        </div>
+
+        <div class="machine-bottom">
+          <span>PLEASE DO NOT ENCOURAGE IT</span>
+          <span class="serial-number">SERIAL № 0001</span>
+        </div>
+      </section>
     </section>
 
-    <p id="machine-status" role="status" aria-live="polite">
-      The machine is sleeping.
-    </p>
+    <section class="machine-console" aria-label="Machine controls and status">
+      <p id="machine-status" role="status" aria-live="polite">The machine is standing by. Make your move.</p>
+      <button type="button" id="reset-button"><span aria-hidden="true">↻</span> Reset machine</button>
+      <p class="machine-interaction-hint">Drag to rotate in 3D · Focus the machine and use arrow keys · Switch it on to see what happens.</p>
+    </section>
 
-    <button type="button" id="reset-button">Reset Machine</button>
+    <p class="machine-footnote"><span>01 / 01</span> A rather elaborate way to accomplish nothing.</p>
   </main>
 
   <footer id="site-footer"></footer>
