@@ -25,53 +25,111 @@
         <p class="machine-edition"><span>DESIGNED TO DISAGREE</span><span>EST. 2026</span></p>
       </div>
 
-      <section class="machine" tabindex="0" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight" aria-label="Interactive Useless Machine, model UM-01. Drag to rotate it in 3D or use the arrow keys.">
-        <div class="machine-top">
-          <span class="machine-brand"><span class="brand-mark">U.</span> OBJECTS OF NO IMPORTANCE</span>
-          <span class="machine-model">UM—01 <span>·</span> No. 001</span>
-        </div>
+      <div class="machine-stage" id="machine-stage">
+        <div class="bubble" id="bubble" aria-hidden="true"></div>
 
-        <div class="machine-face">
-          <div class="arm-hatch" aria-hidden="true"></div>
-          <div class="machine-display">
-            <span class="display-caption"><span class="machine-light" id="machine-light"></span> SYSTEM STATUS</span>
-            <p id="machine-message">Awaiting a questionable decision.</p>
-          </div>
+        <svg id="machine-svg" class="machine-svg" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <title>A cream-coloured box with a face and a lever on top. It really does not like being switched on.</title>
+          <defs>
+            <clipPath id="eye-clip"><circle r="31"></circle></clipPath>
+          </defs>
 
-          <div class="control-caption"><span>THE ONLY CONTROL</span><span>ON / OFF</span></div>
-          <label class="switch" for="machine-switch">
-            <input type="checkbox" id="machine-switch">
-            <span class="switch-track" aria-hidden="true"></span>
-            <span class="switch-label">POWER</span>
-          </label>
+          <!-- room -->
+          <rect class="room" x="0" y="0" width="600" height="520" rx="28"></rect>
 
-          <div class="machine-hand" id="machine-hand" aria-hidden="true">
-            <span class="arm-base"></span>
-            <span class="arm-upper"></span>
-            <span class="arm-elbow"></span>
-            <span class="arm-forearm"></span>
-            <span class="arm-actuator"></span>
-            <span class="arm-wrist"></span>
-            <span class="arm-gripper">
-              <span class="arm-finger"></span>
-              <span class="arm-finger-secondary"></span>
-            </span>
-          </div>
-          <span class="face-screw screw-one" aria-hidden="true"></span>
-          <span class="face-screw screw-two" aria-hidden="true"></span>
-        </div>
+          <!-- table -->
+          <ellipse class="floor-shadow" cx="300" cy="459" rx="232" ry="9"></ellipse>
+          <rect class="ink table" x="24" y="456" width="552" height="18" rx="9"></rect>
 
-        <div class="machine-bottom">
-          <span>PLEASE DO NOT ENCOURAGE IT</span>
-          <span class="serial-number">SERIAL № 0001</span>
-        </div>
-      </section>
+          <!-- the machine -->
+          <g id="box">
+            <rect class="ink foot" x="124" y="432" width="64" height="26" rx="9"></rect>
+            <rect class="ink foot" x="412" y="432" width="64" height="26" rx="9"></rect>
+            <path class="ink body" d="M116 170 H484 A26 26 0 0 1 510 196 V414 A26 26 0 0 1 484 440 H116 A26 26 0 0 1 90 414 V196 A26 26 0 0 1 116 170 Z"></path>
+            <path class="ink deck" d="M116 170 H484 A26 26 0 0 1 510 196 V270 H90 V196 A26 26 0 0 1 116 170 Z"></path>
+            <path class="edge-shade" d="M93 273 H507 V287 H93 Z"></path>
+            <rect class="tray" x="112" y="188" width="376" height="64" rx="16"></rect>
+            <text class="deck-label" x="238" y="240">OFF</text>
+            <text class="deck-label" x="362" y="240">ON</text>
+
+            <!-- front-face details -->
+            <circle class="screw" cx="112" cy="292" r="4"></circle>
+            <circle class="screw" cx="488" cy="292" r="4"></circle>
+            <circle class="screw" cx="112" cy="420" r="4"></circle>
+            <circle class="screw" cx="488" cy="420" r="4"></circle>
+            <ellipse class="blush" cx="172" cy="368" rx="20" ry="11"></ellipse>
+            <ellipse class="blush" cx="428" cy="368" rx="20" ry="11"></ellipse>
+            <text class="plate" x="300" y="428">UM—01 · OBJECTS OF NO IMPORTANCE</text>
+
+            <!-- lever -->
+            <ellipse class="ink lever-base" cx="300" cy="243" rx="40" ry="11"></ellipse>
+            <g id="lever-hit" role="switch" tabindex="0" aria-checked="false" aria-label="Power switch. Turn it on and see what happens.">
+              <circle class="hit" cx="300" cy="205" r="56"></circle>
+              <circle class="focus-ring" cx="300" cy="205" r="58"></circle>
+              <g id="lever-fly" transform="translate(300 243)">
+                <g id="lever" transform="rotate(-32)">
+                  <rect class="ink lever-stem" x="-6" y="-62" width="12" height="62" rx="6"></rect>
+                  <circle class="ink acc" cy="-64" r="15"></circle>
+                  <circle cx="-5" cy="-69" r="4" fill="#fff" opacity=".55"></circle>
+                  <circle class="ink lever-hub" r="9"></circle>
+                </g>
+              </g>
+            </g>
+
+            <!-- stamp mark -->
+            <g id="denied" transform="translate(300 222) rotate(-8)" opacity="0">
+              <rect x="-66" y="-21" width="132" height="42" rx="6"></rect>
+              <text x="0" y="8">DENIED</text>
+            </g>
+
+            <!-- hatch -->
+            <rect class="ink cavity" x="420" y="204" width="50" height="42" rx="12"></rect>
+            <g id="arms"></g>
+            <g id="flap-R"><rect class="ink flap" x="420" y="204" width="50" height="42" rx="12"></rect><line class="flap-handle" x1="428" y1="225" x2="438" y2="225"></line></g>
+          </g>
+
+          <!-- face -->
+          <g id="face">
+            <circle id="nose-glow" class="acc" cx="300" cy="322" r="24" opacity="0"></circle>
+            <circle id="nose" class="ink" cx="300" cy="322" r="11"></circle>
+
+            <g class="eye" id="eye-L" data-cx="230" data-cy="322">
+              <g class="eye-open">
+                <circle class="eye-white" r="34"></circle>
+                <g clip-path="url(#eye-clip)">
+                  <g class="pupil"><circle r="14" fill="#202b3c"></circle><circle cx="-4" cy="-5" r="4.5" fill="#fff"></circle></g>
+                  <g class="lid"><rect x="-60" y="-130" width="120" height="130"></rect><line x1="-60" y1="0" x2="60" y2="0"></line></g>
+                </g>
+                <circle class="eye-ring" r="34"></circle>
+              </g>
+              <path class="eye-happy" d="M-26 10 Q0 -28 26 10"></path>
+              <path class="eye-x" d="M-18 -18 L18 18 M18 -18 L-18 18"></path>
+              <circle class="eye-hit" r="40"></circle>
+            </g>
+            <g class="eye" id="eye-R" data-cx="370" data-cy="322">
+              <g class="eye-open">
+                <circle class="eye-white" r="34"></circle>
+                <g clip-path="url(#eye-clip)">
+                  <g class="pupil"><circle r="14" fill="#202b3c"></circle><circle cx="-4" cy="-5" r="4.5" fill="#fff"></circle></g>
+                  <g class="lid"><rect x="-60" y="-130" width="120" height="130"></rect><line x1="-60" y1="0" x2="60" y2="0"></line></g>
+                </g>
+                <circle class="eye-ring" r="34"></circle>
+              </g>
+              <path class="eye-happy" d="M-26 10 Q0 -28 26 10"></path>
+              <path class="eye-x" d="M-18 -18 L18 18 M18 -18 L-18 18"></path>
+              <circle class="eye-hit" r="40"></circle>
+            </g>
+
+            <path id="mouth" d="M278 385 Q300 395 322 385"></path>
+          </g>
+        </svg>
+      </div>
     </section>
 
     <section class="machine-console" aria-label="Machine controls and status">
       <p id="machine-status" role="status" aria-live="polite">The machine is standing by. Make your move.</p>
-      <button type="button" id="reset-button"><span aria-hidden="true">↻</span> Reset machine</button>
-      <p class="machine-interaction-hint">Drag to rotate in 3D · Focus the machine and use arrow keys · Switch it on to see what happens.</p>
+      <button type="button" class="machine-btn" id="reset-button"><span aria-hidden="true">↻</span> Reset machine</button>
+      <p class="machine-interaction-hint">Flip the switch · Poke its eyes · It has paperwork for this.</p>
     </section>
 
     <p class="machine-footnote"><span>01 / 01</span> A rather elaborate way to accomplish nothing.</p>
